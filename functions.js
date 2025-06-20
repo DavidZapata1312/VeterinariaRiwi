@@ -1,24 +1,18 @@
 // Lista (array) donde se almacenan los pacientes
-let pacientes = [];
-
-// Cada paciente es un objeto
-let paciente1 = {
-    nombre: "Firulais",
-    especie: "Perro",
-    edad: 5,
-    vacunado: true
-};
-
-let paciente2 = {
-    nombre: "Michi",
-    especie: "Gato",
-    edad: 3,
-    vacunado: false
-};
-
-// Agregamos los objetos a la lista
-pacientes.push(paciente1);
-pacientes.push(paciente2);
+let pacientes = [
+    {
+        nombre: "Firulais",
+        especie: "Perro",
+        edad: 9,
+        vacunado: true
+    },
+    {
+        nombre: "Michi",
+        especie: "Gato",
+        edad: 6,
+        vacunado: false
+    }
+];
 
 console.log(pacientes);
 
@@ -40,18 +34,29 @@ añadirMascota()
 console.log(pacientes)
 
 
-function buscarMascota(){
+function buscarMascota() {
     //Funcion para buscar mascotas por nombre
 }
 
-function filtrarVacunador(){
-    //funcion para filtrar vacunados con funciones flecha
-}
 
-function calcularPromedioEdad(){
-    //calcular promedio de edades
-}
+//funcion para filtrar vacunados con funciones flecha
+let vacunados = pacientes.filter(p => p.vacunado === true);
+console.log("Pacientes vacunados:", vacunados);
 
-function mostrarOrdenEdad(){
+
+function calcularPromedioEdad(pacientes) {
+    if (pacientes.length === 0) {
+        return 0;
+    }
+
+    let sumaEdades = pacientes.reduce((total, paciente) => total + paciente.edad, 0);
+    let promedio = sumaEdades / pacientes.length;
+    return promedio;
+}
+function mostrarPromedio() {
+    let promedio = calcularPromedioEdad(pacientes);
+    alert("Promedio de edad: " + promedio);
+}
+function mostrarOrdenEdad() {
     //Organizar mascotas por orden de edad
 }
