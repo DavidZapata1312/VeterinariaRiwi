@@ -27,6 +27,13 @@ function añadirMascota(){  //Funcion para añadir mascotas
     let especie = prompt("Ingresa la especie de tu mascota:");
     let edad = parseInt(prompt("Ingresa la edad de tu mascota:"))
     let vacunado = prompt("Tu mascota esta vacunada?:")
+    if (vacunado === "si"){
+        vacunado = true
+    }else if(vacunado === "no"){
+        vacunado = false
+    }else
+    console.error("Respuesta no valida")
+    alert("Ingresa una respuesta valida")
 
     let mascotanueva = {
         "nombre" : nombre,
