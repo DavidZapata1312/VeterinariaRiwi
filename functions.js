@@ -14,11 +14,25 @@ let pacientes = [
     }
 ];
 
+console.log(pacientes);
 
+function añadirMascota(){  //Funcion para añadir mascotas
+    let nombre = prompt("Ingresa el nombre de tu mascota:");
+    let especie = prompt("Ingresa la especie de tu mascota:");
+    let edad = parseInt(prompt("Ingresa la edad de tu mascota:"))
+    let vacunado = prompt("Tu mascota esta vacunada?:")
 
-function añadirMascota() {
-    //Funcion para añadir mascotas
-}
+    let mascotanueva = {
+        "nombre" : nombre,
+        "especie" : especie,
+        "edad" : edad,
+        "vacunado" : vacunado
+    } 
+    pacientes.push(mascotanueva)
+} 
+añadirMascota()
+console.log(pacientes)
+
 
 function buscarMascota() {
     //Funcion para buscar mascotas por nombre
